@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b27oduagypddw"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_d2avo"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_d2avo")
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 436.0
+offset_top = 198.0
+offset_right = 773.0
+offset_bottom = 430.0
+text = "quit"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
