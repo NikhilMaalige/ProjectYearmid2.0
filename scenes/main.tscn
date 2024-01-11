@@ -10,7 +10,6 @@ offset_left = 176.0
 offset_top = 32.0
 offset_right = 304.0
 offset_bottom = 96.0
-tooltip_text = "play play play play play play play play play play"
 text = "PLAY NOT QUIT"
 
 [node name="Quit" type="Button" parent="."]
