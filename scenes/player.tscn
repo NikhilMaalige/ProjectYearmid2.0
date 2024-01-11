@@ -79,9 +79,8 @@ _data = {
 "walk_up": SubResource("Animation_tiwjw")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5101"]
-radius = 8.88889
-height = 18.4889
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwyxn"]
+size = Vector2(16, 15)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 motion_mode = 1
@@ -89,8 +88,7 @@ script = ExtResource("1_5o6qu")
 
 [node name="Player" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(559, 314)
-scale = Vector2(5.625, 5.625)
+position = Vector2(236, 107)
 texture = ExtResource("1_b67pp")
 hframes = 3
 vframes = 4
@@ -103,6 +101,5 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(559, 314)
-scale = Vector2(5.625, 5.625)
-shape = SubResource("CapsuleShape2D_o5101")
+position = Vector2(236, 106.5)
+shape = SubResource("RectangleShape2D_hwyxn")
