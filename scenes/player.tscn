@@ -80,20 +80,21 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o5101"]
-radius = 1.42222
-height = 4.26667
+radius = 8.88889
+height = 18.4889
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(1, 3)
 motion_mode = 1
 script = ExtResource("1_5o6qu")
 
 [node name="Player" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1, -3)
+position = Vector2(559, 314)
+scale = Vector2(5.625, 5.625)
 texture = ExtResource("1_b67pp")
 hframes = 3
 vframes = 4
+frame = 2
 
 [node name="PlayerAnimation" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Player")
@@ -102,6 +103,6 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -3)
+position = Vector2(559, 314)
 scale = Vector2(5.625, 5.625)
 shape = SubResource("CapsuleShape2D_o5101")
