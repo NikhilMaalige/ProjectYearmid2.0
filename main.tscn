@@ -10,6 +10,7 @@ offset_left = 175.0
 offset_top = 116.0
 offset_right = 875.0
 offset_bottom = 516.0
+button_mask = 6
 text = "quit"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
