@@ -6,7 +6,7 @@
 
 [node name="Enermy1" type="CharacterBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Enermy1" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(233, 112)
 texture = ExtResource("1_jfpbx")
@@ -14,7 +14,7 @@ hframes = 4
 vframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Sprite2D")
+root_node = NodePath("../Enermy1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ualjq")
