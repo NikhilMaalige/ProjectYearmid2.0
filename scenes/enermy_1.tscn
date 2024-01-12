@@ -88,6 +88,7 @@ position = Vector2(233, 112)
 texture = ExtResource("1_jfpbx")
 hframes = 4
 vframes = 3
+frame = 2
 
 [node name="Enermy1Animation" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Enermy1")
