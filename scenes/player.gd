@@ -21,7 +21,7 @@ func updateAnimation():
 		animations.play("walk_" + direction)
 
 func handleCollision():
-	
+	pass
 
 func _physics_process(delta):
 	handleInput()
