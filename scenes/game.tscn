@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b27oduagypddw"]
+[gd_scene load_steps=10 format=3 uid="uid://b27oduagypddw"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_rd5iv"]
 [ext_resource type="PackedScene" uid="uid://shbhdbop3csh" path="res://scenes/player.tscn" id="2_2namv"]
+[ext_resource type="Script" path="res://scenes/follow cam.gd" id="3_if0qu"]
 [ext_resource type="PackedScene" uid="uid://tkmx8vcoowpw" path="res://scenes/enermy_1.tscn" id="3_ydfdr"]
 [ext_resource type="Texture2D" uid="uid://dxygodqgnymqj" path="res://grasstest1.png" id="4_tnxu4"]
 [ext_resource type="Texture2D" uid="uid://djubtesitdfsd" path="res://rockstest1.png" id="5_ksunv"]
@@ -95,9 +96,13 @@ script = ExtResource("1_rd5iv")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_2namv")]
 z_index = 1
+position = Vector2(2, 52)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="follow cam" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(240, 135)
+limit_left = 0
+limit_top = 0
+script = ExtResource("3_if0qu")
 
 [node name="Enermy1" parent="." instance=ExtResource("3_ydfdr")]
 z_index = 1
