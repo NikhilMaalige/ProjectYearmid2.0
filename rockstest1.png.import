@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctkoxg2v6jkmp"
-path="res://.godot/imported/player-walk.png-85133828c34184c44d766b72b1eedf45.ctex"
+uid="uid://djubtesitdfsd"
+path="res://.godot/imported/rockstest1.png-45d642ffad704b2a4385d7e723c9f844.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player-walk.png"
-dest_files=["res://.godot/imported/player-walk.png-85133828c34184c44d766b72b1eedf45.ctex"]
+source_file="res://rockstest1.png"
+dest_files=["res://.godot/imported/rockstest1.png-45d642ffad704b2a4385d7e723c9f844.ctex"]
 
 [params]
 
