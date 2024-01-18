@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://shbhdbop3csh"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_5o6qu"]
-[ext_resource type="Texture2D" uid="uid://oy3258dhsrvq" path="res://player-walk.png" id="1_b67pp"]
+[ext_resource type="Texture2D" uid="uid://ctkoxg2v6jkmp" path="res://player-walk.png" id="1_b67pp"]
 
 [sub_resource type="Animation" id="Animation_xx6mh"]
 resource_name = "walk_down"
@@ -83,6 +83,8 @@ _data = {
 size = Vector2(16, 4)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 7
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_5o6qu")
 

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed2 = 27
+var speed2 = 23
 var player_chase = false
 var player = null
 @onready var animations_enemy = $Enermy1Animation
@@ -36,3 +36,15 @@ func _on_detection_area_body_exited(body):
 	player_chase = false
 	animations_enemy.play("enemy1_walk_down")
 	animations_enemy.stop()
+
+
+func _on_area_2d_body_entered(body):
+	player = body
+	player_chase = true
+
+
+func _on_area_2d_body_exited(body):
+	player = null
+	player_chase = false
+	animations_enemy.play("enemy1_walk_down")
+	animations_enemy.stop() # Replace with function body.
