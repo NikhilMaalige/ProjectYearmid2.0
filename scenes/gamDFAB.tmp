@@ -110,7 +110,6 @@ position = Vector2(240, 135)
 limit_left = 0
 limit_top = 0
 limit_right = 960
-limit_bottom = 928
 script = ExtResource("3_if0qu")
 
 [node name="Enermy1" parent="." instance=ExtResource("3_ydfdr")]
