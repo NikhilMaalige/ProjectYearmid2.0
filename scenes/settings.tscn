@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d7edyfxx00y"]
+
+[ext_resource type="Script" path="res://scenes/settings.gd" id="1_4roqu"]
+
+[node name="settings" type="Node2D"]
+script = ExtResource("1_4roqu")
+
+[node name="back" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "BACK"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
