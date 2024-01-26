@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d7edyfxx00y"]
+[gd_scene load_steps=3 format=3 uid="uid://d7edyfxx00y"]
 
 [ext_resource type="Script" path="res://scenes/settings.gd" id="1_4roqu"]
+[ext_resource type="AudioStream" uid="uid://ck53nalo6jymd" path="res://audo/Overworld_day.mp3" id="2_kq16n"]
 
 [node name="settings" type="Node2D"]
 script = ExtResource("1_4roqu")
@@ -10,4 +11,16 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "BACK"
 
+[node name="audio_tester" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(478, 3)
+stream = ExtResource("2_kq16n")
+
+[node name="test" type="Button" parent="."]
+offset_left = 164.0
+offset_top = 20.0
+offset_right = 294.0
+offset_bottom = 51.0
+text = "Test your Audo!"
+
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="test" to="." method="_on_test_pressed"]
