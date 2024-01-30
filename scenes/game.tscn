@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b27oduagypddw"]
+[gd_scene load_steps=11 format=3 uid="uid://b27oduagypddw"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_rd5iv"]
 [ext_resource type="PackedScene" uid="uid://shbhdbop3csh" path="res://scenes/player.tscn" id="2_2namv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tkmx8vcoowpw" path="res://scenes/enermy_1.tscn" id="3_ydfdr"]
 [ext_resource type="Texture2D" uid="uid://dxygodqgnymqj" path="res://grasstest1.png" id="4_tnxu4"]
 [ext_resource type="Texture2D" uid="uid://djubtesitdfsd" path="res://rockstest1.png" id="5_ksunv"]
+[ext_resource type="AudioStream" uid="uid://ck53nalo6jymd" path="res://audo/Overworld_day.mp3" id="7_pujm5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1mrk"]
 texture = ExtResource("4_tnxu4")
@@ -139,5 +140,8 @@ offset_top = 8.0
 offset_right = 64.0
 offset_bottom = 39.0
 text = "MENU"
+
+[node name="overworld-day-player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_pujm5")
 
 [connection signal="pressed" from="CanvasLayer/return_menu" to="." method="_on_return_menu_pressed"]

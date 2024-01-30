@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d7edyfxx00y"]
+[gd_scene load_steps=4 format=3 uid="uid://d7edyfxx00y"]
 
 [ext_resource type="Script" path="res://scenes/settings.gd" id="1_4roqu"]
 [ext_resource type="AudioStream" uid="uid://ck53nalo6jymd" path="res://audo/Overworld_day.mp3" id="2_kq16n"]
+[ext_resource type="Script" path="res://scenes/mastervolumeslider.gd" id="3_vigl8"]
 
 [node name="settings" type="Node2D"]
 script = ExtResource("1_4roqu")
@@ -22,5 +23,24 @@ offset_right = 294.0
 offset_bottom = 51.0
 text = "Test your Audo!"
 
+[node name="mastervolumeslider" type="HSlider" parent="."]
+offset_left = 97.0
+offset_top = 80.0
+offset_right = 363.0
+offset_bottom = 96.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("3_vigl8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 170.0
+offset_top = 57.0
+offset_right = 292.0
+offset_bottom = 83.0
+text = "Master Volume"
+
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="test" to="." method="_on_test_pressed"]
+[connection signal="mouse_exited" from="mastervolumeslider" to="mastervolumeslider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="mastervolumeslider" to="mastervolumeslider" method="_on_value_changed"]
