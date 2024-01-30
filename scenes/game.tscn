@@ -103,7 +103,7 @@ script = ExtResource("1_rd5iv")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_2namv")]
 z_index = 1
-position = Vector2(2, 52)
+position = Vector2(2, 45)
 
 [node name="follow cam" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(240, 135)
