@@ -1,31 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://wk4fysj4v8tv"]
+[gd_scene load_steps=3 format=3 uid="uid://wk4fysj4v8tv"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_36e05"]
+[ext_resource type="Texture2D" uid="uid://ccigb5j51f06t" path="res://thegamebackgrounduimainmenugodot.jpeg" id="2_duufc"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_36e05")
 
-[node name="Settings" type="Button" parent="."]
-offset_left = 176.0
-offset_top = 111.0
-offset_right = 305.0
-offset_bottom = 175.0
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 480.0
+offset_bottom = 272.0
+texture = ExtResource("2_duufc")
+expand_mode = 1
+
+[node name="Settings" type="Button" parent="TextureRect"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 90.0
+offset_bottom = 39.0
 text = "SETTINGS"
 
-[node name="Play" type="Button" parent="."]
-offset_left = 176.0
-offset_top = 32.0
-offset_right = 304.0
-offset_bottom = 96.0
+[node name="Play" type="Button" parent="TextureRect"]
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 160.0
+offset_bottom = 208.0
 text = "PLAY NOT QUIT"
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 176.0
-offset_top = 190.0
-offset_right = 304.0
-offset_bottom = 254.0
+[node name="Quit" type="Button" parent="TextureRect"]
+offset_left = 320.0
+offset_top = 144.0
+offset_right = 448.0
+offset_bottom = 208.0
 text = "QUIT"
 
-[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="TextureRect/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="TextureRect/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TextureRect/Quit" to="." method="_on_quit_pressed"]
