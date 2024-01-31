@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6a1dog6cem5j"]
+
+[ext_resource type="Texture2D" uid="uid://ckb34dq7ev1oc" path="res://swordtest111.png" id="1_6tv4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om1nr"]
+size = Vector2(5, 12)
+
+[node name="Sword" type="Area2D"]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(1, -6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 15
+visibility_layer = 15
+z_index = 2
+texture_filter = 1
+texture = ExtResource("1_6tv4j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_om1nr")
