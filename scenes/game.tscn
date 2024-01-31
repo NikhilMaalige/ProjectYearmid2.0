@@ -55,11 +55,11 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -6.25, -11.25, 4.75, 0.25, 8, 11.5, 2.5, -5, -7.5)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -6.25, -11.25, 4.75, 0.25, 8, 13, 2.5, -5, -7.5)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.75, -9.25, -12.5, 2.25, -3.75, 7.25, 7, 4, 10.25, 4.75, 11.25, -5.75)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.75, -9.25, -12.5, 2.25, -3.75, 7.25, 7.5, 7.25, 11.75, 4.75, 11.25, -5.75)
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
@@ -102,18 +102,6 @@ sources/1 = SubResource("TileSetAtlasSource_rwqne")
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rd5iv")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_2namv")]
-z_index = 1
-position = Vector2(2, 45)
-
-[node name="follow cam" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(240, 135)
-limit_left = 0
-limit_top = 0
-limit_right = 960
-limit_bottom = 928
-script = ExtResource("3_if0qu")
-
 [node name="Enermy1" parent="." instance=ExtResource("3_ydfdr")]
 z_index = 1
 position = Vector2(107, -50)
@@ -122,6 +110,7 @@ position = Vector2(107, -50)
 top_level = true
 light_mask = 7
 visibility_layer = 7
+y_sort_enabled = true
 texture_filter = 1
 tile_set = SubResource("TileSet_dqu0u")
 format = 2
@@ -131,6 +120,18 @@ layer_1/name = "foliage"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(458757, 65537, 0, 327682, 65537, 0, 524297, 1, 0, 262156, 1, 0, 131074, 131073, 0, 327688, 131073, 0, 458764, 65537, 1, 524288, 65537, 1, 524300, 131073, 1, 327686, 131073, 1, 196612, 131073, 1, 131086, 131073, 1)
+
+[node name="CharacterBody2D" parent="TileMap" instance=ExtResource("2_2namv")]
+z_index = 1
+position = Vector2(2, 45)
+
+[node name="follow cam" type="Camera2D" parent="TileMap/CharacterBody2D"]
+position = Vector2(240, 135)
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 928
+script = ExtResource("3_if0qu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

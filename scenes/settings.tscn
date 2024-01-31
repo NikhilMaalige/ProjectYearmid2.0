@@ -8,8 +8,10 @@
 script = ExtResource("1_4roqu")
 
 [node name="back" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 58.0
+offset_bottom = 39.0
 text = "BACK"
 
 [node name="audio_tester" type="AudioStreamPlayer2D" parent="."]

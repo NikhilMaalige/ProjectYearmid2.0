@@ -86,6 +86,7 @@ size = Vector2(16, 16)
 radius = 56.0357
 
 [node name="Enermy1" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_7clkb")

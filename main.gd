@@ -13,14 +13,11 @@ func _process(delta):
 
 
 func _on_quit_pressed():
-	get_tree().quit() # Replace with function body.
+	get_tree().quit()
 
-
+func _on_settings_pressed():
+	get_tree().change_scene_to_file("res://scenes/settings.tscn") 
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/game.tscn") # Replace with function body.
-
-
-func _on_settings_pressed():
-	get_tree().change_scene_to_file("res://scenes/settings.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
