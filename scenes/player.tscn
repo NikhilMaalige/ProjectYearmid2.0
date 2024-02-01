@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://shbhdbop3csh"]
+[gd_scene load_steps=19 format=3 uid="uid://shbhdbop3csh"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_5o6qu"]
-[ext_resource type="Texture2D" uid="uid://oy3258dhsrvq" path="res://player-walk.png" id="1_b67pp"]
-[ext_resource type="PackedScene" path="res://scenes/sword.tscn" id="3_bncsg"]
+[ext_resource type="Texture2D" uid="uid://ctkoxg2v6jkmp" path="res://player-walk.png" id="1_b67pp"]
+[ext_resource type="PackedScene" uid="uid://b6a1dog6cem5j" path="res://scenes/sword.tscn" id="3_bncsg"]
 
 [sub_resource type="Animation" id="Animation_my6eb"]
 length = 0.001
@@ -227,6 +227,21 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwyxn"]
 size = Vector2(16, 4)
 
+[sub_resource type="Animation" id="Animation_6b6xe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.678431, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_l1ser"]
 resource_name = "hurtBlink"
 length = 0.3
@@ -244,28 +259,17 @@ tracks/0/keys = {
 "values": [Color(0.678431, 0, 0, 0.776471), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_6b6xe"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.678431, 0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fkcpb"]
 _data = {
 "RESET": SubResource("Animation_6b6xe"),
 "hurtBlink": SubResource("Animation_l1ser")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yja22"]
+radius = 9.0
+height = 18.0
+
+[node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 7
 collision_mask = 7
@@ -307,3 +311,11 @@ rotation = 2.0944
 libraries = {
 "": SubResource("AnimationLibrary_fkcpb")
 }
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(240, 132)
+shape = SubResource("CapsuleShape2D_yja22")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

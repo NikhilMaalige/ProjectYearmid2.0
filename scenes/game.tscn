@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b27oduagypddw"]
+[gd_scene load_steps=12 format=3 uid="uid://b27oduagypddw"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_rd5iv"]
 [ext_resource type="PackedScene" uid="uid://shbhdbop3csh" path="res://scenes/player.tscn" id="2_2namv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tkmx8vcoowpw" path="res://scenes/enermy_1.tscn" id="3_ydfdr"]
 [ext_resource type="Texture2D" uid="uid://dxygodqgnymqj" path="res://grasstest1.png" id="4_tnxu4"]
 [ext_resource type="Texture2D" uid="uid://djubtesitdfsd" path="res://rockstest1.png" id="5_ksunv"]
+[ext_resource type="Script" path="res://scenes/ProgressBar.gd" id="7_6ievl"]
 [ext_resource type="AudioStream" uid="uid://ck53nalo6jymd" path="res://audo/Overworld_day.mp3" id="7_pujm5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1mrk"]
@@ -103,7 +104,6 @@ sources/1 = SubResource("TileSetAtlasSource_rwqne")
 script = ExtResource("1_rd5iv")
 
 [node name="Enermy1" parent="." instance=ExtResource("3_ydfdr")]
-z_index = 1
 position = Vector2(107, -50)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -121,11 +121,11 @@ layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(458757, 65537, 0, 327682, 65537, 0, 524297, 1, 0, 262156, 1, 0, 131074, 131073, 0, 327688, 131073, 0, 458764, 65537, 1, 524288, 65537, 1, 524300, 131073, 1, 327686, 131073, 1, 196612, 131073, 1, 131086, 131073, 1)
 
-[node name="CharacterBody2D" parent="TileMap" instance=ExtResource("2_2namv")]
+[node name="Player" parent="TileMap" instance=ExtResource("2_2namv")]
 z_index = 1
 position = Vector2(2, 45)
 
-[node name="follow cam" type="Camera2D" parent="TileMap/CharacterBody2D"]
+[node name="follow cam" type="Camera2D" parent="TileMap/Player"]
 position = Vector2(240, 135)
 limit_left = 0
 limit_top = 0
@@ -141,6 +141,18 @@ offset_top = 8.0
 offset_right = 64.0
 offset_bottom = 39.0
 text = "MENU"
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 8.0
+offset_right = -7.0
+offset_bottom = 35.0
+grow_horizontal = 0
+value = 100.0
+script = ExtResource("7_6ievl")
 
 [node name="overworld-day-player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_pujm5")

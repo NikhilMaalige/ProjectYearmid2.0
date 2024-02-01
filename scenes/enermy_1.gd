@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed2 = 23
+var speed2 = 21
 var player_chase = false
 var player = null
 @onready var animations_enemy = $Enermy1Animation
