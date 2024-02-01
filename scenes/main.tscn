@@ -20,6 +20,7 @@ expand_mode = 1
 
 [node name="Settings" type="TextureButton" parent="TextureRect"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 48.0
@@ -41,6 +42,7 @@ stretch_mode = 0
 
 [node name="Quit" type="TextureButton" parent="TextureRect"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 320.0
 offset_top = 136.0
 offset_right = 448.0

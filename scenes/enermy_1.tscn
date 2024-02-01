@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://tkmx8vcoowpw"]
 
 [ext_resource type="Script" path="res://scenes/enermy_1.gd" id="1_7clkb"]
-[ext_resource type="Texture2D" uid="uid://b0xtmwiw4moc" path="res://enemy-1-walk.png" id="1_jfpbx"]
+[ext_resource type="Texture2D" uid="uid://wcjpjroopbjc" path="res://enemy-1-walk.png" id="1_jfpbx"]
 
 [sub_resource type="Animation" id="Animation_27aro"]
 resource_name = "enemy1_walk_down"

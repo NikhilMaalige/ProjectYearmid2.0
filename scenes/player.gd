@@ -4,12 +4,22 @@ extends CharacterBody2D
 @onready var animations = $PlayerAnimation
 var health = 100
 
+var lastAnimDirection = "down"
+var isAttacking: bool = false
+
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left" , "ui_right", "ui_up" , "ui_down")
 	velocity = moveDirection*speed
 	
+	if Input.is_action_just_pressed("attack"):
+		animations.play("attack_" + lastAnimDirection)
+		isAttacking = true
+		await animations.animation_finished
+		isAttacking = false
 	
 func updateAnimation(): 
+	if isAttacking: return
+	
 	if velocity.length() == 0:
 		animations.stop()
 	else:
@@ -19,6 +29,7 @@ func updateAnimation():
 		elif velocity.y < 0: direction = "up"
 	
 		animations.play("walk_" + direction)
+		lastAnimDirection = direction
 
 func handleCollision():
 	pass
