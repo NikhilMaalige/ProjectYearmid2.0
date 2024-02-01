@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var speed: int = 100
 @onready var animations = $PlayerAnimation
+@onready var effects = $Effects
+
 var health = 100
 
 var lastAnimDirection = "down"
