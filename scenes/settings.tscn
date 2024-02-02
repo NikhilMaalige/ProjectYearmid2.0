@@ -21,6 +21,7 @@ texture = ExtResource("2_x7isv")
 expand_mode = 1
 
 [node name="mastervolumeslider" type="HSlider" parent="TextureRect"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 32.0
 offset_right = 394.0
