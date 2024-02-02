@@ -318,4 +318,8 @@ libraries = {
 position = Vector2(240, 132)
 shape = SubResource("CapsuleShape2D_yja22")
 
+[node name="hurtTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]

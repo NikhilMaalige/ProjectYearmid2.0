@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmwor6bokssj5"
-path="res://.godot/imported/openbookgodot2024.png-ff8bca40d65960e6b9bcedef1e28f9fb.ctex"
+uid="uid://brvbi7nn3jhrw"
+path="res://.godot/imported/godotmenugamenothover.png-3def733a58530ee7bc6028c28dba5096.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://openbookgodot2024.png"
-dest_files=["res://.godot/imported/openbookgodot2024.png-ff8bca40d65960e6b9bcedef1e28f9fb.ctex"]
+source_file="res://godotmenugamenothover.png"
+dest_files=["res://.godot/imported/godotmenugamenothover.png-3def733a58530ee7bc6028c28dba5096.ctex"]
 
 [params]
 

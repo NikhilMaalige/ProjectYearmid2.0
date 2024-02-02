@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b27oduagypddw"]
+[gd_scene load_steps=16 format=3 uid="uid://b27oduagypddw"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_rd5iv"]
 [ext_resource type="PackedScene" uid="uid://shbhdbop3csh" path="res://scenes/player.tscn" id="2_2namv"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://djubtesitdfsd" path="res://rockstest1.png" id="5_ksunv"]
 [ext_resource type="Script" path="res://scenes/ProgressBar.gd" id="7_6ievl"]
 [ext_resource type="AudioStream" uid="uid://ck53nalo6jymd" path="res://audo/Overworld_day.mp3" id="7_pujm5"]
+[ext_resource type="Texture2D" uid="uid://brvbi7nn3jhrw" path="res://godotmenugamenothover.png" id="9_topna"]
+[ext_resource type="Texture2D" uid="uid://di51oyjd4luv0" path="res://godotmenugame.png" id="10_4vy6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1mrk"]
 texture = ExtResource("4_tnxu4")
@@ -133,6 +135,7 @@ layer_1/tile_data = PackedInt32Array(458757, 65537, 0, 327682, 65537, 0, 524297,
 [node name="Player" parent="TileMap" instance=ExtResource("2_2namv")]
 z_index = 1
 position = Vector2(2, 45)
+knockbackPower = 1000
 
 [node name="follow cam" type="Camera2D" parent="TileMap/Player"]
 position = Vector2(240, 135)
@@ -140,16 +143,10 @@ limit_left = 0
 limit_top = 0
 limit_right = 960
 limit_bottom = 928
+position_smoothing_speed = 10.0
 script = ExtResource("3_if0qu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="return_menu" type="Button" parent="CanvasLayer"]
-offset_left = 7.0
-offset_top = 8.0
-offset_right = 64.0
-offset_bottom = 39.0
-text = "MENU"
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
 anchors_preset = 1
@@ -162,6 +159,16 @@ offset_bottom = 35.0
 grow_horizontal = 0
 value = 100.0
 script = ExtResource("7_6ievl")
+
+[node name="return_menu" type="TextureButton" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 48.0
+texture_normal = ExtResource("9_topna")
+texture_hover = ExtResource("10_4vy6b")
+stretch_mode = 0
 
 [node name="overworld-day-player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_pujm5")
