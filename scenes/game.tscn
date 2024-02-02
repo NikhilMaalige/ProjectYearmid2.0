@@ -251,7 +251,7 @@ offset_top = 864.0
 offset_right = 816.0
 offset_bottom = 888.0
 texture_normal = ExtResource("17_5mbqk")
-texture_pressed = ExtResource("18_oksok")
+texture_hover = ExtResource("18_oksok")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -478,17 +478,17 @@ position = Vector2(-120, 776)
 [connection signal="pressed" from="CanvasLayer/return_menu" to="." method="_on_return_menu_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="close_requested" from="Window2" to="." method="_on_window_2_close_requested"]
-[connection signal="close_requested" from="Window3" to="." method="_on_window_close_requested"]
 [connection signal="close_requested" from="Window3" to="." method="_on_window_3_close_requested"]
-[connection signal="close_requested" from="Window4" to="." method="_on_window_close_requested"]
-[connection signal="close_requested" from="Window4" to="." method="_on_window_3_close_requested"]
+[connection signal="close_requested" from="Window3" to="." method="_on_window_close_requested"]
 [connection signal="close_requested" from="Window4" to="." method="_on_window_4_close_requested"]
-[connection signal="close_requested" from="Window5" to="." method="_on_window_close_requested"]
+[connection signal="close_requested" from="Window4" to="." method="_on_window_3_close_requested"]
+[connection signal="close_requested" from="Window4" to="." method="_on_window_close_requested"]
+[connection signal="close_requested" from="Window5" to="." method="_on_window_4_close_requested"]
 [connection signal="close_requested" from="Window5" to="." method="_on_window_5_close_requested"]
 [connection signal="close_requested" from="Window5" to="." method="_on_window_3_close_requested"]
-[connection signal="close_requested" from="Window5" to="." method="_on_window_4_close_requested"]
+[connection signal="close_requested" from="Window5" to="." method="_on_window_close_requested"]
+[connection signal="close_requested" from="Window6" to="." method="_on_window_4_close_requested"]
 [connection signal="close_requested" from="Window6" to="." method="_on_window_6_close_requested"]
-[connection signal="close_requested" from="Window6" to="." method="_on_window_close_requested"]
 [connection signal="close_requested" from="Window6" to="." method="_on_window_5_close_requested"]
 [connection signal="close_requested" from="Window6" to="." method="_on_window_3_close_requested"]
-[connection signal="close_requested" from="Window6" to="." method="_on_window_4_close_requested"]
+[connection signal="close_requested" from="Window6" to="." method="_on_window_close_requested"]
