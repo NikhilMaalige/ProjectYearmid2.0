@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8ja45i2pe7ls"]
+
+[ext_resource type="Texture2D" uid="uid://dmwor6bokssj5" path="res://openbookgodot2024.png" id="1_auysq"]
+
+[node name="Node2D" type="TextureButton"]
+texture_filter = 1
+offset_right = 32.0
+offset_bottom = 32.0
+texture_normal = ExtResource("1_auysq")

@@ -75,7 +75,7 @@ func hurtByEnemy(area):
 	await hurtTimer.timeout
 	effects.play("RESET")
 	isHurt = false
-	print_debug(currentHealth)
+	print_debug("HP: " + str(currentHealth))
 		
 func _on_hurt_box_area_entered(area):
 	if area.name == "HitBox":

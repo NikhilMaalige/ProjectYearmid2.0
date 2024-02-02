@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b27oduagypddw"]
+[gd_scene load_steps=15 format=3 uid="uid://b27oduagypddw"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_rd5iv"]
 [ext_resource type="PackedScene" uid="uid://shbhdbop3csh" path="res://scenes/player.tscn" id="2_2namv"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dxygodqgnymqj" path="res://grasstest1.png" id="4_tnxu4"]
 [ext_resource type="Texture2D" uid="uid://kgevbdq1omry" path="res://grasspaths.png" id="5_5iy1x"]
 [ext_resource type="Texture2D" uid="uid://djubtesitdfsd" path="res://rockstest1.png" id="5_ksunv"]
-[ext_resource type="Script" path="res://scenes/ProgressBar.gd" id="7_6ievl"]
 [ext_resource type="AudioStream" uid="uid://ck53nalo6jymd" path="res://audo/Overworld_day.mp3" id="7_pujm5"]
 [ext_resource type="Texture2D" uid="uid://brvbi7nn3jhrw" path="res://godotmenugamenothover.png" id="9_topna"]
 [ext_resource type="Texture2D" uid="uid://di51oyjd4luv0" path="res://godotmenugame.png" id="10_4vy6b"]
@@ -147,18 +146,6 @@ position_smoothing_speed = 10.0
 script = ExtResource("3_if0qu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -64.0
-offset_top = 8.0
-offset_right = -7.0
-offset_bottom = 35.0
-grow_horizontal = 0
-value = 100.0
-script = ExtResource("7_6ievl")
 
 [node name="return_menu" type="TextureButton" parent="CanvasLayer"]
 texture_filter = 1

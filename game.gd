@@ -16,3 +16,7 @@ func _process(delta):
 func _on_return_menu_pressed():
 	$"overworld-day-player".stop();
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
+
+
+func _on_node_2d_pressed():
+	pass # Replace with function body.
