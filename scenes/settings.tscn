@@ -1,48 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://d7edyfxx00y"]
+[gd_scene load_steps=9 format=3 uid="uid://d7edyfxx00y"]
 
 [ext_resource type="Script" path="res://scenes/settings.gd" id="1_4roqu"]
 [ext_resource type="AudioStream" uid="uid://ck53nalo6jymd" path="res://audo/Overworld_day.mp3" id="2_kq16n"]
+[ext_resource type="Texture2D" uid="uid://c7gacvsj6mcf6" path="res://settings_background_icon.jpeg" id="2_x7isv"]
 [ext_resource type="Script" path="res://scenes/mastervolumeslider.gd" id="3_vigl8"]
+[ext_resource type="Texture2D" uid="uid://qf46nrtil3in" path="res://godotback2024.png" id="5_brh3l"]
+[ext_resource type="Texture2D" uid="uid://decb1u4i020h7" path="res://godotback2024hover.png" id="6_wb0a6"]
+[ext_resource type="Texture2D" uid="uid://dcnwoihjs5xo5" path="res://godotaudiotest.png" id="7_j28vd"]
+[ext_resource type="Texture2D" uid="uid://cjo1hwcohly78" path="res://godotaudiotesthover.png" id="8_myxlc"]
 
 [node name="settings" type="Node2D"]
 script = ExtResource("1_4roqu")
 
-[node name="back" type="Button" parent="."]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 58.0
-offset_bottom = 39.0
-text = "BACK"
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 482.0
+offset_bottom = 264.0
+texture = ExtResource("2_x7isv")
+expand_mode = 1
 
-[node name="audio_tester" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(478, 3)
-stream = ExtResource("2_kq16n")
-
-[node name="test" type="Button" parent="."]
-offset_left = 164.0
-offset_top = 20.0
-offset_right = 294.0
-offset_bottom = 51.0
-text = "Test your Audo!"
-
-[node name="mastervolumeslider" type="HSlider" parent="."]
-offset_left = 97.0
-offset_top = 80.0
-offset_right = 363.0
-offset_bottom = 96.0
+[node name="mastervolumeslider" type="HSlider" parent="TextureRect"]
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 394.0
+offset_bottom = 48.0
 max_value = 1.0
 step = 0.05
 value = 1.0
 script = ExtResource("3_vigl8")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 170.0
-offset_top = 57.0
-offset_right = 292.0
-offset_bottom = 83.0
-text = "Master Volume"
+[node name="back" type="TextureButton" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("5_brh3l")
+texture_hover = ExtResource("6_wb0a6")
 
-[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="test" to="." method="_on_test_pressed"]
-[connection signal="mouse_exited" from="mastervolumeslider" to="mastervolumeslider" method="_on_mouse_exited"]
-[connection signal="value_changed" from="mastervolumeslider" to="mastervolumeslider" method="_on_value_changed"]
+[node name="test" type="TextureButton" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 224.0
+offset_top = 56.0
+offset_right = 296.0
+offset_bottom = 96.0
+texture_normal = ExtResource("7_j28vd")
+texture_hover = ExtResource("8_myxlc")
+stretch_mode = 0
+
+[node name="audio_tester" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(478, 3)
+stream = ExtResource("2_kq16n")
+
+[connection signal="mouse_exited" from="TextureRect/mastervolumeslider" to="TextureRect/mastervolumeslider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="TextureRect/mastervolumeslider" to="TextureRect/mastervolumeslider" method="_on_value_changed"]
+[connection signal="pressed" from="TextureRect/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="TextureRect/test" to="." method="_on_test_pressed"]
