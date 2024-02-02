@@ -4,6 +4,7 @@ var speed2 = 21
 var player_chase = false
 var player = null
 @onready var animations_enemy = $Enermy1Animation
+var enemy_health = 2
 
 
 func _physics_process(delta):
@@ -35,3 +36,10 @@ func _on_detection_area_body_exited(body):
 	player_chase = false
 	animations_enemy.play("enemy1_walk_down")
 	animations_enemy.stop()
+
+
+func _on_hurtbox_area_entered(area):
+	if enemy_health > 0:
+		enemy_health -= 1
+	elif enemy_health <= 0:
+		queue_free()
