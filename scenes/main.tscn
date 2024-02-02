@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://wk4fysj4v8tv"]
+[gd_scene load_steps=10 format=3 uid="uid://wk4fysj4v8tv"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_36e05"]
 [ext_resource type="Texture2D" uid="uid://ccigb5j51f06t" path="res://thegamebackgrounduimainmenugodot.jpeg" id="2_duufc"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ctkkqwiyi842i" path="res://playnotquit2hover.png" id="6_c03ou"]
 [ext_resource type="Texture2D" uid="uid://c6osrwu0rsbwe" path="res://godotquit2final.png" id="7_crqrd"]
 [ext_resource type="Texture2D" uid="uid://dqiob5ttg5hma" path="res://godotquit2finalhover.png" id="8_5usa0"]
+[ext_resource type="AudioStream" uid="uid://b3tmov3bdx4mg" path="res://audo/enemy_approaching_undertale.mp3" id="9_od8ix"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_36e05")
@@ -50,6 +51,9 @@ offset_bottom = 216.0
 texture_normal = ExtResource("7_crqrd")
 texture_hover = ExtResource("8_5usa0")
 stretch_mode = 0
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_od8ix")
 
 [connection signal="pressed" from="TextureRect/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="TextureRect/Play" to="." method="_on_play_pressed"]

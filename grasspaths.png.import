@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://bsyvnggpvs1t0"
-=======
-uid="uid://c3334cscm0xao"
->>>>>>> 525287e8099907b00e3cf7ffbd8b1c460e489446
-path="res://.godot/imported/openbookgodot2024.png-ff8bca40d65960e6b9bcedef1e28f9fb.ctex"
+uid="uid://kgevbdq1omry"
+path="res://.godot/imported/grasspaths.png-6fa0296fd580d4e408f80dde24fb4b9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://openbookgodot2024.png"
-dest_files=["res://.godot/imported/openbookgodot2024.png-ff8bca40d65960e6b9bcedef1e28f9fb.ctex"]
+source_file="res://grasspaths.png"
+dest_files=["res://.godot/imported/grasspaths.png-6fa0296fd580d4e408f80dde24fb4b9f.ctex"]
 
 [params]
 
