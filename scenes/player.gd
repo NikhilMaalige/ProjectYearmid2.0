@@ -10,7 +10,7 @@ class_name Player
 @onready var effects = $Effects
 @onready var hurtTimer = $hurtTimer
 
-@export var maxHealth = 30
+@export var maxHealth = 120
 @onready var currentHealth: int = maxHealth
 
 @export var knockbackPower: int = 500
