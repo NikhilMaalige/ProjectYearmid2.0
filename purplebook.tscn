@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8ja45i2pe7ls"]
+[gd_scene load_steps=3 format=3 uid="uid://c8ja45i2pe7ls"]
 
 [ext_resource type="Texture2D" uid="uid://dmwor6bokssj5" path="res://openbookgodot2024.png" id="1_auysq"]
+[ext_resource type="Texture2D" uid="uid://doptutlv02oa3" path="res://openbookgodot2024hover.png" id="2_c4cnc"]
 
-[node name="Node2D" type="TextureButton"]
+[node name="purplebook" type="TextureButton"]
+z_index = 1
+y_sort_enabled = true
 texture_filter = 1
 offset_right = 32.0
 offset_bottom = 32.0
 texture_normal = ExtResource("1_auysq")
+texture_hover = ExtResource("2_c4cnc")

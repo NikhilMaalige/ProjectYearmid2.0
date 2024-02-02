@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b27oduagypddw"]
+[gd_scene load_steps=17 format=3 uid="uid://b27oduagypddw"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_rd5iv"]
 [ext_resource type="PackedScene" uid="uid://shbhdbop3csh" path="res://scenes/player.tscn" id="2_2namv"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://kgevbdq1omry" path="res://grasspaths.png" id="5_5iy1x"]
 [ext_resource type="Texture2D" uid="uid://djubtesitdfsd" path="res://rockstest1.png" id="5_ksunv"]
 [ext_resource type="AudioStream" uid="uid://ck53nalo6jymd" path="res://audo/Overworld_day.mp3" id="7_pujm5"]
+[ext_resource type="PackedScene" uid="uid://c8ja45i2pe7ls" path="res://purplebook.tscn" id="8_bkpxt"]
 [ext_resource type="Texture2D" uid="uid://brvbi7nn3jhrw" path="res://godotmenugamenothover.png" id="9_topna"]
 [ext_resource type="Texture2D" uid="uid://di51oyjd4luv0" path="res://godotmenugame.png" id="10_4vy6b"]
+[ext_resource type="Texture2D" uid="uid://t67mxvtuy85f" path="res://booklore1.png" id="12_db50k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1mrk"]
 texture = ExtResource("4_tnxu4")
@@ -145,6 +147,14 @@ limit_bottom = 928
 position_smoothing_speed = 10.0
 script = ExtResource("3_if0qu")
 
+[node name="purplebook" parent="TileMap" instance=ExtResource("8_bkpxt")]
+offset_left = 288.0
+offset_top = 200.0
+offset_right = 312.0
+offset_bottom = 224.0
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="return_menu" type="TextureButton" parent="CanvasLayer"]
@@ -160,4 +170,28 @@ stretch_mode = 0
 [node name="overworld-day-player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_pujm5")
 
+[node name="Window" type="Window" parent="."]
+initial_position = 1
+size = Vector2i(250, 200)
+
+[node name="Camera2D" type="Camera2D" parent="Window"]
+
+[node name="TextureRect" type="TextureRect" parent="Window/Camera2D"]
+custom_minimum_size = Vector2(250, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 150.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_db50k")
+expand_mode = 1
+
+[connection signal="pressed" from="TileMap/purplebook" to="." method="_on_purplebook_pressed"]
 [connection signal="pressed" from="CanvasLayer/return_menu" to="." method="_on_return_menu_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
