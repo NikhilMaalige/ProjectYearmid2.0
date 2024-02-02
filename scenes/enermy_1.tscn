@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://tkmx8vcoowpw"]
+[gd_scene load_steps=15 format=3 uid="uid://tkmx8vcoowpw"]
 
 [ext_resource type="Script" path="res://scenes/enermy_1.gd" id="1_7clkb"]
-[ext_resource type="Texture2D" uid="uid://b0xtmwiw4moc" path="res://enemy-1-walk.png" id="1_jfpbx"]
+[ext_resource type="Texture2D" uid="uid://wcjpjroopbjc" path="res://enemy-1-walk.png" id="1_jfpbx"]
 
 [sub_resource type="Animation" id="Animation_27aro"]
 resource_name = "enemy1_walk_down"
@@ -91,6 +91,55 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62stc"]
 size = Vector2(16, 16)
 
+[sub_resource type="Animation" id="Animation_h55vc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enermy1:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enermy1/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gao80"]
+resource_name = "hurtblink2"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enermy1/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.678431, 0, 0, 0.776471), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hv7ss"]
+_data = {
+"RESET": SubResource("Animation_h55vc"),
+"hurtblink2": SubResource("Animation_gao80")
+}
+
 [node name="Enermy1" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
@@ -99,11 +148,19 @@ collision_mask = 7
 script = ExtResource("1_7clkb")
 
 [node name="Enermy1" type="Sprite2D" parent="."]
+clip_children = 2
 texture_filter = 1
 position = Vector2(233, 112)
 texture = ExtResource("1_jfpbx")
 hframes = 4
 vframes = 3
+
+[node name="ColorRect" type="ColorRect" parent="Enermy1"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(1, 0, 0, 0)
 
 [node name="Enermy1Animation" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Enermy1")
@@ -136,6 +193,13 @@ collision_mask = 4
 [node name="hitboxdies" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(233, 112)
 shape = SubResource("RectangleShape2D_62stc")
+
+[node name="Effects2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hv7ss")
+}
+
+[node name="hurtTimer2" type="Timer" parent="."]
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
