@@ -5,10 +5,10 @@ var player_chase = false
 var player = null
 @onready var animations_enemy = $Enermy1Animation
 var enemy_health = 2
-
+@onready var effects2 = $Effects2
+@onready var hurtTimer = $hurtTimer2
 
 func _physics_process(delta):
-		
 	if player_chase:
 		position += (player.position - position)/speed2		
 		
@@ -41,4 +41,8 @@ func _on_hitbox_area_entered(area):
 	if enemy_health > 0:
 		enemy_health -= 1
 	elif enemy_health <= 0:
+		effects2.play("hurtblink2")
+		hurtTimer.start()
+		await hurtTimer.timeout
+		effects2.play("RESET")
 		queue_free()
