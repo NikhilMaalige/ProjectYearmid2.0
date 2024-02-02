@@ -220,7 +220,7 @@ size = Vector2i(250, 200)
 
 [node name="Camera2D" type="Camera2D" parent="Window"]
 
-[node name="TextureRect" type="TextureRect" parent="Window/Camera2D"]
+[node name="Lore1" type="TextureRect" parent="Window/Camera2D"]
 custom_minimum_size = Vector2(250, 200)
 anchors_preset = 8
 anchor_left = 0.5
