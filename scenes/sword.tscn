@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6a1dog6cem5j"]
+[gd_scene load_steps=3 format=3 uid="uid://dcqnccsd3px03"]
 
 [ext_resource type="Texture2D" uid="uid://ckb34dq7ev1oc" path="res://swordtest111.png" id="1_6tv4j"]
 
@@ -9,6 +9,8 @@ size = Vector2(5, 12)
 light_mask = 9
 visibility_layer = 9
 position = Vector2(1, -6)
+collision_layer = 4
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 15

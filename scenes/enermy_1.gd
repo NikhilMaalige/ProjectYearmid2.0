@@ -37,8 +37,7 @@ func _on_detection_area_body_exited(body):
 	animations_enemy.play("enemy1_walk_down")
 	animations_enemy.stop()
 
-
-func _on_hurtbox_area_entered(area):
+func _on_hitbox_area_entered(area):
 	if enemy_health > 0:
 		enemy_health -= 1
 	elif enemy_health <= 0:
